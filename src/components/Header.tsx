@@ -2,8 +2,15 @@ import logo from "../assets/logo.png";
 import { BsPerson } from "react-icons/bs";
 import { GoSearch } from "react-icons/go";
 import { IoCartOutline } from "react-icons/io5";
+import { atom, useAtom } from "jotai";
+import SearchResult from "./SearchResult";
+
+export const SearchValue = atom("");
+export const ShowHideDiv = atom(false);
 
 const Header = () => {
+  const [search, setSearch] = useAtom(SearchValue);
+  // const [showHide, setShowHide] = useAtom(ShowHideDiv);
   const HeaderArr = [
     "Features",
     "Shop",
@@ -18,10 +25,11 @@ const Header = () => {
 
   const FirstLinks = HeaderArr.slice(0, 6);
   const SecondLinks = HeaderArr.slice(6);
+  console.log(search);
 
   return (
-    <div className="bg-[#f5f5f5] flex flex-col gap-3">
-      <div className="pt-7 px-10 w-[90%] mx-auto flex justify-between items-center">
+    <div className="bg-[#f5f5f5] flex flex-col gap-3 relative">
+      <div className="pt-7 px-10 w-[90%] mx-auto flex justify-between items-center ">
         <img src={logo} alt="" className="h-6" />
         <div className="flex items-center gap-3">
           <div className="relative">
@@ -30,8 +38,14 @@ const Header = () => {
               placeholder="Search for anything"
               className="border-2 border-black text-sm text-left pr-[140px] py-[11px] rounded-md placeholder-gray-600 px-5 bg-gray-200
               focus:bg-white"
+              onChange={(e) => setSearch(e.target.value)}
             />
             <GoSearch className="absolute top-3 right-3 text-xl cursor-pointer" />
+            {search.length ? (
+              <div className="absolute w-full h-[240px] z-10 ">
+                <SearchResult search={search} />
+              </div>
+            ) : ''}
           </div>
           <BsPerson className="text-2xl cursor-pointer" />
           <IoCartOutline className="text-2xl cursor-pointer" />

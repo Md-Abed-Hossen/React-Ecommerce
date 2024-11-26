@@ -10,55 +10,57 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+export const BestSellerArr = [
+  {
+    id: 1,
+    title: "Element Sync",
+    name: "Smart Home Speaker - Variant Image Set",
+    price: 67.7,
+    img: p12,
+  },
+  {
+    id: 2,
+    title: "Drifly",
+    name: "Indoor WiFi Smart Camera Pan & Tilt",
+    price: 89.0,
+    img: p15,
+  },
+  {
+    id: 3,
+    title: "Element Sync",
+    name: "Smart Home Speaker - Variant Image Set",
+    price: 67.7,
+    img: p12,
+  },
+  {
+    id: 4,
+    title: "Drifly",
+    name: "Indoor WiFi Smart Camera Pan & Tilt",
+    price: 89.0,
+    img: p15,
+  },
+  {
+    id: 5,
+    title: "Element Sync",
+    name: "Smart Home Speaker - Variant Image Set",
+    price: 67.7,
+    img: p12,
+  },
+  {
+    id: 6,
+    title: "Drifly",
+    name: "Indoor WiFi Smart Camera Pan & Tilt",
+    price: 89.0,
+    img: p15,
+  },
+];
+
 export default function BestSeller() {
   const [swiperRef, setSwiperRef] = useState(null);
   const appendNumber = useRef(500);
   const prependNumber = useRef(1);
 
-  const BestSellerArr = [
-    {
-      id: 1,
-      title: "Element Sync",
-      name: "Smart Home Speaker - Variant Image Set",
-      price: 67.7,
-      img: p12,
-    },
-    {
-      id: 2,
-      title: "Drifly",
-      name: "Indoor WiFi Smart Camera Pan & Tilt",
-      price: 89.0,
-      img: p15,
-    },
-    {
-      id: 3,
-      title: "Element Sync",
-      name: "Smart Home Speaker - Variant Image Set",
-      price: 67.7,
-      img: p12,
-    },
-    {
-      id: 4,
-      title: "Drifly",
-      name: "Indoor WiFi Smart Camera Pan & Tilt",
-      price: 89.0,
-      img: p15,
-    },
-    {
-      id: 5,
-      title: "Element Sync",
-      name: "Smart Home Speaker - Variant Image Set",
-      price: 67.7,
-      img: p12,
-    },
-    {
-      id: 6,
-      title: "Drifly",
-      name: "Indoor WiFi Smart Camera Pan & Tilt",
-      price: 89.0,
-      img: p15,
-    },
-  ];
+  
   // Create array with 500 slides
   const [slides, setSlides] = useState(
     Array.from({ length: 10 }).map((_, index) => `Slide ${index + 1}`)

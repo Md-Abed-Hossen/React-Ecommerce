@@ -13,7 +13,6 @@ const AllComponents = () => {
       <CarouselBanner/>
       <FeatureProducts/>
       <BestSeller/>
-  
     </div>
   )
 }
