@@ -1,4 +1,4 @@
-import AllComponents from './components/AllComponents'
+import Layout from "@/components/Layout"
 
 import './App.css'
 
@@ -6,9 +6,10 @@ function App() {
   
 
   return (
-    <>
-      <AllComponents/>
-    </>
+    <div className='bg-[#f5f5f5] '>
+      <Layout/>
+      
+    </div>
   )
 }
 

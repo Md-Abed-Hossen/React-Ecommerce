@@ -1,7 +1,8 @@
-import promotion1 from "../../assets/promotion-1.png";
-import promotion2 from "../../assets/promotion-2.png";
-import promotion3 from "../../assets/promotion-3.png";
-import FeatureProductsCard from "./FeatureProductsCard";
+import promotion1 from "@/assets/promotion-1.png";
+import promotion2 from "@/assets/promotion-2.png";
+import promotion3 from "@/assets/promotion-3.png";
+
+import FeatureProductsCard from "@/components/FeatureProducts/FeatureProductsCard";
 
 export const FeatureArray = [
   {
@@ -22,8 +23,8 @@ export const FeatureArray = [
 ];
 const FeatureProducts = () => {
   return (
-    <div className="w-[85%] mx-auto pt-8 pb-8">
-      <div className="flex flex-row gap-5">
+    <div className="w-full mx-auto pt-[30px] pb-[60px]">
+      <div className="flex flex-row gap-5 justify-between">
         {FeatureArray.map((data) => (
           <p key={data.id}>
             <FeatureProductsCard title={data.title} img={data.img} />

@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import slide_01 from '../assets/slide_01-_1.png'
-import slide003 from '../assets/slide003.png'
-import videofb1 from '../assets/video-fb1.png'
+import slide_01 from '@/assets/slide_01-_1.png'
+import slide003 from '@/assets/slide003.png'
+import videofb1 from '@/assets/video-fb1.png'
 
 
 // Import Swiper styles
@@ -25,7 +25,7 @@ export default function App() {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
   return (
-    <>
+    <div className=''>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -54,6 +54,6 @@ export default function App() {
           <span ref={progressContent}></span>
         </div>
       </Swiper>
-    </>
+    </div>
   );
 }

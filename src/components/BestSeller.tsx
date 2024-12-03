@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import BestSellerCard from "./BestSellerCard";
-import p12 from "../assets/p12.png";
-import p15 from "../assets/p15.png";
+import BestSellerCard from "@/components/BestSellerCard";
+import p12 from "@/assets/p12.png";
+import p15 from "@/assets/p15.png";
 
-// Import Swiper styles
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -34,7 +34,7 @@ export const BestSellerArr = [
   },
   {
     id: 4,
-    title: "Drifly",
+    title: "DRIFLY",
     name: "Indoor WiFi Smart Camera Pan & Tilt",
     price: 89.0,
     img: p15,
@@ -61,7 +61,7 @@ export default function BestSeller() {
   const prependNumber = useRef(1);
 
   
-  // Create array with 500 slides
+
   const [slides, setSlides] = useState(
     Array.from({ length: 10 }).map((_, index) => `Slide ${index + 1}`)
   );
@@ -85,15 +85,15 @@ export default function BestSeller() {
   };
 
   return (
-    <div className="w-[80%] mx-auto">
+    <div className="mx-auto h-[510px]">
       <Swiper
         modules={[Virtual, Navigation, Pagination]}
         onSwiper={setSwiperRef}
         slidesPerView={5}
-        spaceBetween={30}
-        pagination={{
-          type: "fraction",
-        }}
+        spaceBetween={20}
+        // pagination={{
+        //   type: "fraction",
+        // }}
         navigation={true}
         virtual
       >

@@ -1,18 +1,19 @@
-import { BestSellerArr } from "./BestSeller"; // Importing FeatureArray
-import BestSellerCard from "./BestSellerCard";
+import { BestSellerArr } from "@/components/BestSeller";
 
 const SearchResult = ({ search }: { search: string }) => {
-  // Filter the FeatureArray based on the search term
   const filterSearch = BestSellerArr.filter((data) =>
     data.title.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
-    <div className="bg-gray-100 h-full pt-8 pb-8">
+    <div className="bg-gray-100 h-full pt-8 pb-8 overflow-y-auto">
       {filterSearch.length > 0 ? (
-        <div className="flex flex-row gap-5">
+        <div className="flex flex-col gap-2 size-4 w-full">
           {filterSearch.map((data) => (
-            <BestSellerCard key={data.id} title={data.title} />
+            <p key={data.id} className="flex flex-row">
+              <img src={data.img} alt="" className="size-14" />
+              {data.name}$ {data.price}
+            </p>
           ))}
         </div>
       ) : (
