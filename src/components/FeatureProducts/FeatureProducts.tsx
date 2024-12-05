@@ -4,7 +4,7 @@ import promotion3 from "@/assets/promotion-3.png";
 
 import FeatureProductsCard from "@/components/FeatureProducts/FeatureProductsCard";
 
-export const FeatureArray = [
+export const featureArray = [
   {
     id: 1,
     title: "Up to 50% off on accessories",
@@ -25,7 +25,7 @@ const FeatureProducts = () => {
   return (
     <div className="w-full mx-auto pt-[30px] pb-[60px]">
       <div className="flex flex-row gap-5 justify-between">
-        {FeatureArray.map((data) => (
+        {featureArray.map((data) => (
           <p key={data.id}>
             <FeatureProductsCard title={data.title} img={data.img} />
           </p>

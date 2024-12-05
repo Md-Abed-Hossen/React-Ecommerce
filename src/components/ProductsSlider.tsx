@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import BestSellerCard from "@/components/BestSellerCard";
+import ProductsSlider from "@/components/ProductsSlider";
 import p12 from "@/assets/p12.png";
 import p15 from "@/assets/p15.png";
 
@@ -55,7 +55,7 @@ export const BestSellerArr = [
   },
 ];
 
-export default function BestSeller() {
+const ProductsSlider=()=> {
   const [swiperRef, setSwiperRef] = useState(null);
   const appendNumber = useRef(500);
   const prependNumber = useRef(1);
@@ -111,3 +111,4 @@ export default function BestSeller() {
     </div>
   );
 }
+export default ProductsSlider

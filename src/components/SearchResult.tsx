@@ -1,7 +1,7 @@
-import { BestSellerArr } from "@/components/BestSeller";
+import { ProductsSlider } from "@/components/ProductsSlider";
 
 const SearchResult = ({ search }: { search: string }) => {
-  const filterSearch = BestSellerArr.filter((data) =>
+  const filterSearch = ProductsSlider.filter((data) =>
     data.title.toLowerCase().includes(search.toLowerCase())
   );
 

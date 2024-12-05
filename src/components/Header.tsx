@@ -3,16 +3,16 @@ import { BsPerson } from "react-icons/bs";
 import { GoSearch } from "react-icons/go";
 import { IoCartOutline } from "react-icons/io5";
 import { atom, useAtom } from "jotai";
-import SearchResult from "@/components/SearchResult";
-import { showhide } from "@/components/AtomsConfig";
+import searchResult from "@/components/SearchResult";
+import { showHide } from "@/components/AtomsConfig";
 
-export const SearchValue = atom("");
+export const searchValue = atom("");
 
 const Header = ({className}) => {
-  const [search, setSearch] = useAtom(SearchValue);
-  const [show, setShow] = useAtom(showhide);
+  const [search, setSearch] = useAtom(searchValue);
+  const [show, setShow] = useAtom(showHide);
 
-  const HeaderArr = [
+  const headerArr = [
     "Features",
     "Shop",
     "Doorbells",
@@ -24,14 +24,13 @@ const Header = ({className}) => {
     "Contact",
   ];
 
-  const FirstLinks = HeaderArr.slice(0, 6);
-  const SecondLinks = HeaderArr.slice(6);
-  console.log(search);
+  const FirstLinks = headerArr.slice(0, 6);
+  const SecondLinks = headerArr.slice(6);
 
   const viewCard = () => {
     setShow(!show);
   };
-  console.log(show);
+
 
   return (
     <div className={`w-full bg-[#f5f5f5] sticky top-0 z-10 ${className}`}>
@@ -48,13 +47,11 @@ const Header = ({className}) => {
                 onChange={(e) => setSearch(e.target.value)}
               />
               <GoSearch className="absolute top-3 right-3 text-xl cursor-pointer" />
-              {search.length ? (
+              {Boolean(search.length)&& 
                 <div className="absolute w-full h-[240px] z-10 ">
-                  <SearchResult search={search} />
+                  <searchResult search={search}/>
                 </div>
-              ) : (
-                ""
-              )}
+              }
             </div>
             <BsPerson className="text-2xl cursor-pointer" />
 
