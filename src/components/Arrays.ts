@@ -1,4 +1,4 @@
-export const companyarr = [
+export const companyArr = [
   {
     id: 1,
     Name: "Wholesale",
@@ -25,7 +25,7 @@ export const companyarr = [
   },
 ];
 
-export const Resourcesarr = [
+export const resourcesArr = [
   {
     id: 1,
     Name: "Blog",

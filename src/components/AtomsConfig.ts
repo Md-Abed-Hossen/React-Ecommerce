@@ -1,4 +1,4 @@
 import { atom } from 'jotai'
 
-export const showhide = atom(false)
+export const showHide = atom(false)
 

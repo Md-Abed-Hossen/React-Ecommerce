@@ -56,22 +56,3 @@ const ProductSummery = () => {
 };
 
 export default ProductSummery;
-
-{
-  /* // const ProductSummery = () => {
-//     return (
-//       <div className="flex justify-between">
-//         <div className="bg-blue-300 h-[620px] w-[630px]  rounded-2xl">h1</div>
-//         <div className="flex flex-col justify-between ">
-//           <div className="bg-black h-[300px] w-[630px] rounded-2xl">2nd</div>
-//           <div className="flex justify-between">
-//             <div className="bg-gray-600 h-[300px] w-[305px] rounded-2xl">3rd</div>
-//             <div className="bg-gray-900 h-[300px] w-[305px] rounded-2xl">4th</div>
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   };
-
-//   export default ProductSummery; */
-}

@@ -5,7 +5,7 @@ import watches from "@/assets/watch.png";
 import speakers from "@/assets/speakers.png";
 
 const DemoProducts = () => {
-  const demo = [
+  const demoArray = [
     {
       id: 1,
       Name: "Doorbells",
@@ -18,7 +18,7 @@ const DemoProducts = () => {
   ];
   return (
     <div className="flex h-[370px] w-[1280px] justify-between">
-      {demo.map((data) => (
+      {demoArray.map((data) => (
         <div
           key={data.id}
           className="h-[290px] w-[232px] p-[20px] relative overflow-hidden rounded-2xl drop-shadow-md cursor-pointer hover:-translate-y-3 transition delay-150 duration-400 hover:drop-shadow-xl "

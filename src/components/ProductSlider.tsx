@@ -1,16 +1,15 @@
 import React, { useRef, useState } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import BestSellerCard from "@/components/BestSellerCard";
+import BestSellerCard from "@/components/ProductSliderCard";
 import p12 from "@/assets/p12.png";
 import p15 from "@/assets/p15.png";
-
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export const BestSellerArr = [
+export const productsArray = [
   {
     id: 1,
     title: "Element Sync",
@@ -54,13 +53,10 @@ export const BestSellerArr = [
     img: p15,
   },
 ];
-
-export default function BestSeller() {
+const ProductSlider=()=> {
   const [swiperRef, setSwiperRef] = useState(null);
   const appendNumber = useRef(500);
   const prependNumber = useRef(1);
-
-  
 
   const [slides, setSlides] = useState(
     Array.from({ length: 10 }).map((_, index) => `Slide ${index + 1}`)
@@ -91,13 +87,10 @@ export default function BestSeller() {
         onSwiper={setSwiperRef}
         slidesPerView={5}
         spaceBetween={20}
-        // pagination={{
-        //   type: "fraction",
-        // }}
         navigation={true}
         virtual
       >
-        {BestSellerArr.map((data) => (
+        {productsArray.map((data) => (
           <SwiperSlide key={data.id}>
             <BestSellerCard
               name={data.name}
@@ -111,3 +104,5 @@ export default function BestSeller() {
     </div>
   );
 }
+
+export default ProductSlider;

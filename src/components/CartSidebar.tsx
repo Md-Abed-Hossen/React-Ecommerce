@@ -1,10 +1,10 @@
 import { RxCross2 } from "react-icons/rx";
 import { BsCartX } from "react-icons/bs";
-import { showhide } from "@/components/AtomsConfig";
+import { showHide } from "@/components/AtomsConfig";
 import { useAtom } from "jotai";
 
 const CartSidebar = () => {
-  const [show,setShow] = useAtom(showhide)
+  const [show, setShow] = useAtom(showHide);
   return (
     <div className="h-full rounded-2xl bg-white flex flex-col absolute w-full">
       <div className="flex justify-between items-center py-[23px] px-[30px] bg">
@@ -12,7 +12,7 @@ const CartSidebar = () => {
           Cart
         </p>
         <div className="cursor-pointer text-xl">
-          <RxCross2 onClick={()=>setShow(false)}/>
+          <RxCross2 onClick={() => setShow(false)} />
         </div>
       </div>
 
@@ -28,10 +28,7 @@ const CartSidebar = () => {
           </button>
         </div>
       </div> */}
-<div>
-  
-</div>
-
+      <div></div>
     </div>
   );
 };

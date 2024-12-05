@@ -9,7 +9,6 @@ const Quotes = () => {
         Enjoy huge, limited-time deals on select devices so you'll never miss a
         moment this holiday season and beyond.
       </p>
-  
     </div>
   );
 };
