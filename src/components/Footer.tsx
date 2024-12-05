@@ -3,9 +3,9 @@ import FooterLogo from "@/assets/footerlogo.png";
 import { companyArr, resourcesArr } from "@/components/Arrays";
 import CreditCard from "@/components/CreditCard";
 
-const Footer = () => {
+const Footer = ({className}) => {
   return (
-    <div className="bg-[#2f3c44] h-[574.4px] py-[65px]">
+    <div className={`bg-[#2f3c44] h-[574.4px] py-[65px] ${className}`}>
       <div className="mx-auto flex w-[1280px]">
         <div className="h-[275.4px] w-[436.6px]">
           <img

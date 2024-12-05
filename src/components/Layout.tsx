@@ -10,11 +10,13 @@ import Quotes from "@/components/Quotes";
 import ProductSummery from "@/components/ProductSummery";
 import DemoProducts from "@/components/DemoProducts";
 import Marquee from "@/components/Marquee";
-import { showHide } from "@/components/AtomsConfig";
+import { showHide, productDialog } from "@/components/AtomsConfig";
 import { useAtom } from "jotai";
+import ProductDialogBox from "./ProductDialogBox";
 
 const AllComponents = () => {
   const [show] = useAtom(showHide);
+  const [dialog] = useAtom(productDialog);
   const blurEffect = show ? "blur-[6px]" : "";
 
   return (
@@ -22,9 +24,9 @@ const AllComponents = () => {
       {show && (
         <div className="fixed h-full z-20 transition-all duration-300 right-0 w-[540px]">
           <CartSidebar />
+         
         </div>
       )}
-
       <InfoNav />
       <hr />
       <Header className={blurEffect} />
@@ -38,8 +40,9 @@ const AllComponents = () => {
         <ProductSummery />
         <Marquee />
         <DemoProducts />
+        {dialog && <ProductDialogBox/>}
       </div>
-      <Footer />
+      <Footer className={blurEffect} />
     </div>
   );
 };
