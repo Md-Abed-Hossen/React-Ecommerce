@@ -1,6 +1,11 @@
 import { FaAngleRight } from "react-icons/fa6";
 
-const FeatureProductsCard = ({ title, img }) => {
+interface FeatureCardProps {
+  title: string;
+  img: string;
+}
+
+const FeatureProductsCard: React.FC<FeatureCardProps> = ({ title, img }) => {
   return (
     <div className="h-[140px] w-[406.66px] bg-white rounded-2xl flex justify-between px-3 py-3 shadow-custom-multi">
       <div className=" flex flex-col gap-5 items-start px-[15px] py-[12px] ">

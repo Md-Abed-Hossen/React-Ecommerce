@@ -4,34 +4,24 @@ import { GoSearch } from "react-icons/go";
 import { IoCartOutline } from "react-icons/io5";
 import { atom, useAtom } from "jotai";
 import searchResult from "@/components/SearchResult";
+import { headers } from "@/components/static/comapnyInfo";
 import { showHide } from "@/components/AtomsConfig";
+import { useState } from "react";
 
-export const searchValue = atom("");
-
-const Header = ({className}) => {
-  const [search, setSearch] = useAtom(searchValue);
+const Header = ({ className }) => {
+  const [searchValue, setSearchValue] = useState("");
   const [show, setShow] = useAtom(showHide);
 
-  const headerArr = [
-    "Features",
-    "Shop",
-    "Doorbells",
-    "Security",
-    "Accessories",
-    "Journal",
-    "Our Story",
-    "Vendors",
-    "Contact",
-  ];
-
-  const firstLinks = headerArr.slice(0, 6);
-  const secondLinks = headerArr.slice(6);
+  const firstLinks = headers.slice(0, 6);
+  const secondLinks = headers.slice(6);
 
   const viewCard = () => {
     setShow(!show);
   };
 
-
+  const handleSearch = (e: any) => {
+    setSearchValue(e.target.value);
+  };
   return (
     <div className={`w-full bg-[#f5f5f5] sticky top-0 z-10 ${className}`}>
       <div className="flex flex-col gap-3 w-[1280px] mx-auto pt-[10px] ">
@@ -44,39 +34,48 @@ const Header = ({className}) => {
                 placeholder="Search for anything"
                 className="border-2 text-sm text-left pr-[140px] py-[11px] rounded-md placeholder-gray-600 px-5 bg-[#e7e8ea]
               focus:bg-white"
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={(e) => handleSearch(e)}
               />
-              <GoSearch className="absolute top-3 right-3 text-xl cursor-pointer" />
-              {Boolean(search.length)&& 
+              <GoSearch className="absolute top-3 right-3 text-xl" />
+              {Boolean(searchValue.length) && (
                 <div className="absolute w-full h-[240px] z-10 ">
-                  <searchResult search={search}/>
+                  <searchResult search={searchValue} />
                 </div>
-              }
+              )}
             </div>
-            <BsPerson className="text-2xl cursor-pointer" />
+            <button>
+              <BsPerson className="text-2xl cursor-pointer" />
+            </button>
 
-            <IoCartOutline
-              className="text-2xl cursor-pointer"
-              onClick={() => viewCard()}/>
+            <button>
+              <IoCartOutline
+                className="text-2xl cursor-pointer"
+                onClick={() => viewCard()}
+              />
+            </button>
           </div>
         </div>
 
         <nav className="pb-5 flex justify-between">
           <div className="inline-flex gap-10">
-            {firstLinks.map((data, index) => (
+            {firstLinks.map((data) => (
               <p
-                key={index}
+                key={data}
                 className="
         font-bold text-sm no-underline text-[#535b62] relative hover:opacity-100 
         before:transition-all before:duration-300 before:content-[''] before:h-[1px] before:bg-[#1c6de7e0] before:absolute before:bottom-[0px] before:w-0 hover:before:w-full cursor-pointer hover:text-[#1c6de7e0]
-      ">{data}</p>
+      "
+              >
+                {data}
+              </p>
             ))}
           </div>
           <div className="inline-flex gap-10 pl-10">
             {secondLinks.map((data, index) => (
               <p
                 key={index}
-                className="text-[#9b9fa0] hover:text-slate-700 font-bold cursor-pointer">
+                className="text-[#9b9fa0] hover:text-slate-700 font-bold cursor-pointer"
+              >
                 {data}
               </p>
             ))}

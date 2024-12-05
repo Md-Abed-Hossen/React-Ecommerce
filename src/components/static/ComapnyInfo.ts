@@ -1,4 +1,4 @@
-export const companyArr = [
+export const companyServices = [
     {
       id: 1,
       Name: "Wholesale",
@@ -25,7 +25,7 @@ export const companyArr = [
     },
   ];
   
-  export const resourcesArr = [
+  export const resources = [
     {
       id: 1,
       Name: "Blog",
@@ -53,5 +53,44 @@ export const companyArr = [
     {
       id: 7,
       Name: "Privacy",
+    },
+  ];
+
+ export const headers = [
+    {
+      id: 1,
+      Name: "Features",
+    },
+    {
+      id: 2,
+      Name: "Shop",
+    },
+    {
+      id: 3,
+      Name: "Doorbells",
+    },
+    {
+      id: 4,
+      Name: "Security",
+    },
+    {
+      id: 5,
+      Name: "Accessories",
+    },
+    {
+      id: 6,
+      Name: "Journal",
+    },
+    {
+      id: 7,
+      Name: "Our Story",
+    },
+    {
+      id: 8,
+      Name: "Vendors",
+    },
+    {
+      id: 9,
+      Name: "Contact",
     },
   ];

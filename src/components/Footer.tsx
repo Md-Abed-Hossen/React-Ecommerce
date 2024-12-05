@@ -1,5 +1,5 @@
 import FooterLogo from "@/assets/footerlogo.png";
-import { companyArr, resourcesArr } from "@/components/static/CompanyInfo";
+import { companyServices, resources } from "@/components/static/CompanyInfo";
 import { FaArrowRightLong } from "react-icons/fa6";
 import CreditCard from "@/components/CreditCard";
 
@@ -19,7 +19,7 @@ const Footer = () => {
 
         <ul className="text-white h-[275px] w-[218.33px]">
           <p className="text-[17px] mb-[20px] font-medium">Company</p>
-          {companyArr.map((data) => (
+          {companyServices.map((data) => (
             <li key={data.id} className="mb-[5px] text-[#AAAEB6] text-[15px]">
               {data.Name}
             </li>
@@ -28,7 +28,7 @@ const Footer = () => {
 
         <ul className="text-white h-[275px] w-[218.33px]">
           <p className="text-[17px] mb-[20px] font-medium">Company</p>
-          {resourcesArr.map((data) => (
+          {resources.map((data) => (
             <li key={data.id} className="mb-[5px] text-[#AAAEB6] text-[15px]">
               {data.Name}
             </li>
