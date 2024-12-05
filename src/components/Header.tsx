@@ -34,8 +34,7 @@ const Header = ({ className }) => {
                 placeholder="Search for anything"
                 className="border-2 text-sm text-left pr-[140px] py-[11px] rounded-md placeholder-gray-600 px-5 bg-[#e7e8ea]
               focus:bg-white"
-                onChange={(e) => handleSearch(e)}
-              />
+                onChange={(e) => handleSearch(e)}/>
               <GoSearch className="absolute top-3 right-3 text-xl" />
               {Boolean(searchValue.length) && (
                 <div className="absolute w-full h-[240px] z-10 ">
@@ -60,12 +59,11 @@ const Header = ({ className }) => {
           <div className="inline-flex gap-10">
             {firstLinks.map((data) => (
               <p
-                key={data}
+                key={data.id}
                 className="
         font-bold text-sm no-underline text-[#535b62] relative hover:opacity-100 
         before:transition-all before:duration-300 before:content-[''] before:h-[1px] before:bg-[#1c6de7e0] before:absolute before:bottom-[0px] before:w-0 hover:before:w-full cursor-pointer hover:text-[#1c6de7e0]
-      "
-              >
+      ">
                 {data}
               </p>
             ))}
@@ -74,8 +72,7 @@ const Header = ({ className }) => {
             {secondLinks.map((data, index) => (
               <p
                 key={index}
-                className="text-[#9b9fa0] hover:text-slate-700 font-bold cursor-pointer"
-              >
+                className="text-[#9b9fa0] hover:text-slate-700 font-bold cursor-pointer">
                 {data}
               </p>
             ))}
