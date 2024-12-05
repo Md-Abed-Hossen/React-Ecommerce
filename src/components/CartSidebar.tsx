@@ -1,5 +1,6 @@
 import { RxCross2 } from "react-icons/rx";
 import { BsCartX } from "react-icons/bs";
+import { RiDeleteBin6Line } from "react-icons/ri";
 import { showHide } from "@/components/AtomsConfig";
 import { useAtom } from "jotai";
 
@@ -28,7 +29,36 @@ const CartSidebar = () => {
           </button>
         </div>
       </div> */}
-      <div></div>
+      <div className="px-[30px] flex justify-between pt-2">
+        <div className="h-[120px] w-[96px] bg-black"> hi </div>
+        <div className="w-[275px] h-[91px] text-[#303C43] ">
+          <div className="text-[15px]">name</div>
+          <div className="text-[12px]">types</div>
+          <div className="flex space-x-5 items-center">
+            <div className="w-[80px] h-[36px] px-1 items-center border border-1 rounded-md flex justify-between text-[15px] text-[#303C43]">
+              <button>-</button>
+              <div>count</div>
+              <button>+</button>
+            </div>
+            <RiDeleteBin6Line className="text-red-500 text-lg" />
+          </div>
+        </div>
+        <div className="text-[#303C43] text-[15px]">$10</div>
+      </div>
+
+      <div className="p-[30px] bg-gray-600">
+        <div className="bg-red-600 flex flex-row justify-between">
+          <div className="">
+            <p>Total</p>
+            <p>Tax included. Shipping calculated at checkout.</p>
+          </div>
+          <p>$50</p>
+        </div>
+        <div>
+          <input type="checkbox" />
+          <p>I agree with the terms and conditions</p>
+        </div>
+      </div>
     </div>
   );
 };
