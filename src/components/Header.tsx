@@ -24,8 +24,8 @@ const Header = ({className}) => {
     "Contact",
   ];
 
-  const FirstLinks = headerArr.slice(0, 6);
-  const SecondLinks = headerArr.slice(6);
+  const firstLinks = headerArr.slice(0, 6);
+  const secondLinks = headerArr.slice(6);
 
   const viewCard = () => {
     setShow(!show);
@@ -57,31 +57,26 @@ const Header = ({className}) => {
 
             <IoCartOutline
               className="text-2xl cursor-pointer"
-              onClick={() => viewCard()}
-            />
+              onClick={() => viewCard()}/>
           </div>
         </div>
 
         <nav className="pb-5 flex justify-between">
           <div className="inline-flex gap-10">
-            {FirstLinks.map((data, index) => (
+            {firstLinks.map((data, index) => (
               <p
                 key={index}
                 className="
         font-bold text-sm no-underline text-[#535b62] relative hover:opacity-100 
         before:transition-all before:duration-300 before:content-[''] before:h-[1px] before:bg-[#1c6de7e0] before:absolute before:bottom-[0px] before:w-0 hover:before:w-full cursor-pointer hover:text-[#1c6de7e0]
-      "
-              >
-                {data}
-              </p>
+      ">{data}</p>
             ))}
           </div>
           <div className="inline-flex gap-10 pl-10">
-            {SecondLinks.map((data, index) => (
+            {secondLinks.map((data, index) => (
               <p
                 key={index}
-                className="text-[#9b9fa0] hover:text-slate-700 font-bold cursor-pointer"
-              >
+                className="text-[#9b9fa0] hover:text-slate-700 font-bold cursor-pointer">
                 {data}
               </p>
             ))}

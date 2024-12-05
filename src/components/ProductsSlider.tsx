@@ -1,57 +1,57 @@
 import React, { useRef, useState } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ProductsSlider from "@/components/ProductsSlider";
-import p12 from "@/assets/p12.png";
-import p15 from "@/assets/p15.png";
+import ProductsSliderCard from "@/components/ProductsSliderCard";
+import productImg1 from "@/assets/p12.png";
+import productImg2 from "@/assets/p15.png";
 
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export const BestSellerArr = [
+export const bestSellerArr = [
   {
     id: 1,
     title: "Element Sync",
     name: "Smart Home Speaker - Variant Image Set",
     price: 67.7,
-    img: p12,
+    img: productImg1,
   },
   {
     id: 2,
     title: "Drifly",
     name: "Indoor WiFi Smart Camera Pan & Tilt",
     price: 89.0,
-    img: p15,
+    img: productImg2,
   },
   {
     id: 3,
     title: "Element Sync",
     name: "Smart Home Speaker - Variant Image Set",
     price: 67.7,
-    img: p12,
+    img: productImg1,
   },
   {
     id: 4,
     title: "DRIFLY",
     name: "Indoor WiFi Smart Camera Pan & Tilt",
     price: 89.0,
-    img: p15,
+    img: productImg2,
   },
   {
     id: 5,
     title: "Element Sync",
     name: "Smart Home Speaker - Variant Image Set",
     price: 67.7,
-    img: p12,
+    img: productImg1,
   },
   {
     id: 6,
     title: "Drifly",
     name: "Indoor WiFi Smart Camera Pan & Tilt",
     price: 89.0,
-    img: p15,
+    img: productImg2,
   },
 ];
 
@@ -91,15 +91,12 @@ const ProductsSlider=()=> {
         onSwiper={setSwiperRef}
         slidesPerView={5}
         spaceBetween={20}
-        // pagination={{
-        //   type: "fraction",
-        // }}
         navigation={true}
         virtual
       >
-        {BestSellerArr.map((data) => (
+        {bestSellerArr.map((data) => (
           <SwiperSlide key={data.id}>
-            <BestSellerCard
+            <ProductsSliderCard
               name={data.name}
               img={data.img}
               title={data.title}

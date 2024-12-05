@@ -1,5 +1,5 @@
 import FooterLogo from "@/assets/footerlogo.png";
-import { companyArr, resourcesArr } from "@/components/Arrays";
+import { companyArr, resourcesArr } from "@/components/static/CompanyInfo";
 import { FaArrowRightLong } from "react-icons/fa6";
 import CreditCard from "@/components/CreditCard";
 
@@ -11,8 +11,7 @@ const Footer = () => {
           <img
             src={FooterLogo}
             alt=""
-            className="h-[28.4px] w-[136px] mb-[20px]"
-          />
+            className="h-[28.4px] w-[136px] mb-[20px]"/>
           <strong className="text-[20px] text-[#DADCE0]">
             Elevate your home <br /> with smart technology.
           </strong>
@@ -22,7 +21,7 @@ const Footer = () => {
           <p className="text-[17px] mb-[20px] font-medium">Company</p>
           {companyArr.map((data) => (
             <li key={data.id} className="mb-[5px] text-[#AAAEB6] text-[15px]">
-              {data.Name}{" "}
+              {data.Name}
             </li>
           ))}
         </ul>
@@ -31,7 +30,7 @@ const Footer = () => {
           <p className="text-[17px] mb-[20px] font-medium">Company</p>
           {resourcesArr.map((data) => (
             <li key={data.id} className="mb-[5px] text-[#AAAEB6] text-[15px]">
-              {data.Name}{" "}
+              {data.Name}
             </li>
           ))}
         </ul>
@@ -47,8 +46,7 @@ const Footer = () => {
             <input
               type="text"
               placeholder="Email"
-              className="text-white py-[12px] pr-[40px] pl-[17px] border  border-[#3DADCE0] h-[50px] w-[406.66px] bg-[#2f3c44] rounded-lg outline-none"
-            />
+              className="text-white py-[12px] pr-[40px] pl-[17px] border  border-[#3DADCE0] h-[50px] w-[406.66px] bg-[#2f3c44] rounded-lg outline-none"/>
             <div className="absolute left-[23rem] top-0 flex">
               <div className="w-px h-[3.1rem] bg-white "></div>
 

@@ -1,6 +1,6 @@
-import promotion1 from "@/assets/promotion-1.png";
-import promotion2 from "@/assets/promotion-2.png";
-import promotion3 from "@/assets/promotion-3.png";
+import Promotion1 from "@/assets/promotion-1.png";
+import Promotion2 from "@/assets/promotion-2.png";
+import Promotion3 from "@/assets/promotion-3.png";
 
 import FeatureProductsCard from "@/components/FeatureProducts/FeatureProductsCard";
 
@@ -8,17 +8,17 @@ export const featureArray = [
   {
     id: 1,
     title: "Up to 50% off on accessories",
-    img: promotion1,
+    img: Promotion1,
   },
   {
     id: 2,
     title: "Use automation to save energy",
-    img: promotion2,
+    img: Promotion2,
   },
   {
     id: 3,
     title: "Enjoy a greater level of home security",
-    img: promotion3,
+    img: Promotion3,
   },
 ];
 const FeatureProducts = () => {
