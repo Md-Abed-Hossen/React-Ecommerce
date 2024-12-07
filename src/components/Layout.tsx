@@ -1,8 +1,8 @@
-import Header from "@/components/Header";
+import HeaderComponent from "@/components/HeaderComponent";
 import CarouselBanner from "@/components/CarouselBanner";
 import FeatureProducts from "@/components/FeatureProducts/FeatureProducts";
 import BestSeller from "@/components/ProductSlider";
-import Footer from "@/components/Footer";
+import FooterComponent from "@/components/FooterComponent";
 import CartSidebar from "@/components/CartSidebar";
 import InfoNav from "@/components/InfoNav";
 import BestSellerIntro from "@/components/FeatureProducts/BestSellerIntro";
@@ -13,6 +13,7 @@ import Marquee from "@/components/Marquee";
 import { showHide, productDialog } from "@/components/AtomsConfig";
 import { useAtom } from "jotai";
 import ProductDialogBox from "./ProductDialogBox";
+import AntDesignTest from "./AntDesignTest";
 
 const AllComponents = () => {
   const [show] = useAtom(showHide);
@@ -21,15 +22,14 @@ const AllComponents = () => {
 
   return (
     <div className="relative font-roboto w-full top-0">
-      {show && (
-        <div className="fixed h-full z-20 transition-all duration-300 right-0 w-[540px]">
-          <CartSidebar />
-         
-        </div>
-      )}
+
+      <div className={`fixed h-full z-20 transition-all duration-500 right-0 ${show ? "w-[540px] opacity-100" : "w-0 opacity-0"}`}>
+        <CartSidebar />
+      </div>
+
       <InfoNav />
       <hr />
-      <Header className={blurEffect} />
+      <HeaderComponent className={blurEffect} />
       <div className={`bg-[#f5f5f5] w-[1280px] mx-auto relative ${blurEffect}`}>
         <CarouselBanner />
         <FeatureProducts />
@@ -40,9 +40,10 @@ const AllComponents = () => {
         <ProductSummery />
         <Marquee />
         <DemoProducts />
-        {dialog && <ProductDialogBox/>}
+        {dialog && <ProductDialogBox />}
       </div>
-      <Footer className={blurEffect} />
+      <FooterComponent className={blurEffect} />
+      <AntDesignTest />
     </div>
   );
 };

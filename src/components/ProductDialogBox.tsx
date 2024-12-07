@@ -17,7 +17,7 @@ const Modal = () => {
           <div>
             <img
               src={demoImg}
-              alt=""
+              alt="Product Image"
               className="h-[520px] w-[416px] rounded-2xl"
             />
           </div>

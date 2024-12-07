@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import CarouselCard from "./CarouselCard";
+import ProgressIcon from "../icons/ProgressIcon";
 
 export default function App() {
   const progressCircle = useRef(null);
@@ -47,9 +48,7 @@ export default function App() {
         </SwiperSlide>
 
         <div className="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 48 48" ref={progressCircle}>
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
+        <ProgressIcon icon={progressCircle}/>
           <span ref={progressContent}></span>
         </div>
       </Swiper>
