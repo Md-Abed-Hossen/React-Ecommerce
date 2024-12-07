@@ -1,10 +1,10 @@
 import demoImg from "../assets/p12.png";
 import { RxCross2 } from "react-icons/rx";
 import { productDialog } from "./AtomsConfig";
-import {useAtom } from 'jotai'
+import { useAtom } from "jotai";
 
 const Modal = () => {
-    const [dialog, setDialog] = useAtom(productDialog)
+  const [dialog, setDialog] = useAtom(productDialog);
   return (
     <div className="relative z-10">
       <div
@@ -13,7 +13,7 @@ const Modal = () => {
         aria-modal="true"
         className="fixed inset-0 z-10 flex items-center justify-center bg-gray-500/75"
       >
-        <div className="relative transform overflow-hidden rounded-lg bg-white text-center shadow-xl transition-all w-[1160px] h-[666px] p-[40px] flex justify-between py-20">
+        <div className="relative transform overflow-hidden rounded-lg bg-white text-center shadow-xl transition-all w-[1160px] h-[666px] flex justify-between p-20">
           <div>
             <img
               src={demoImg}
@@ -21,7 +21,7 @@ const Modal = () => {
               className="h-[520px] w-[416px] rounded-2xl"
             />
           </div>
-          <div className="flex flex-col h-[520px] w-[480px] flex justify-between">
+          <div className="flex flex-col h-[520px] w-[480px] justify-between">
             <div className="flex flex-col items-start space-y-4">
               <p className="text-[11px] text-[303C43] font-medium">title</p>
 
@@ -31,7 +31,18 @@ const Modal = () => {
                 Tax included. Shipping calculated at checkout
               </p>
               <p className="text-[15px] text-[303C43] font-medium text-start">
-              A smart home speaker is a voice-activated device designed to perform various tasks, control compatible smart home devices, and offer high-quality audio playback. These speakers come equipped with virtual assistants (like Alexa, Google Assistant, or Siri) that can answer questions, provide updates, play music, set reminders, and more—all through simple voice commands. Many smart home speakers also function as a central hub for other smart devices, allowing users to control lights, thermostats, security cameras, and even door locks from a single voice interface. Often stylish and compact, these speakers fit seamlessly into any room, combining convenience, home automation, and sound quality into one integrated device.
+                A smart home speaker is a voice-activated device designed to
+                perform various tasks, control compatible smart home devices,
+                and offer high-quality audio playback. These speakers come
+                equipped with virtual assistants (like Alexa, Google Assistant,
+                or Siri) that can answer questions, provide updates, play music,
+                set reminders, and more—all through simple voice commands. Many
+                smart home speakers also function as a central hub for other
+                smart devices, allowing users to control lights, thermostats,
+                security cameras, and even door locks from a single voice
+                interface. Often stylish and compact, these speakers fit
+                seamlessly into any room, combining convenience, home
+                automation, and sound quality into one integrated device.
               </p>
             </div>
 
@@ -44,9 +55,10 @@ const Modal = () => {
               </button>
             </div>
           </div>
-          <div>
-          </div>
-            <RxCross2 className="text-[30px] cursor-pointer" onClick={()=>setDialog(false)}/>
+          <RxCross2
+            className="text-[20px] cursor-pointer absolute top-4 right-4"
+            onClick={() => setDialog(false)}
+          />
         </div>
       </div>
     </div>
