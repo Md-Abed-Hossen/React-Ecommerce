@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="h-[275.4px] w-[436.6px]">
           <img
             src={FooterLogo}
-            alt=""
+            alt="Footer logo"
             className="h-[28.4px] w-[136px] mb-[20px]"/>
           <strong className="text-[20px] text-[#DADCE0]">
             Elevate your home <br /> with smart technology.
@@ -57,7 +57,7 @@ const Footer = () => {
           </form>
           <div className="mt-[10px]">
             <input type="checkbox" className="mr-[8px] text-[#DADCE0]" />
-            <label htmlFor="" className="text-[#DADCE0]">
+            <label  className="text-[#DADCE0]">
               I agree to receiving marketing emails and special deals
             </label>
           </div>
@@ -72,7 +72,7 @@ const Footer = () => {
         <div className="flex justify-between">
           <p className="text-[#DADCE0] text-[14px]">
             © {new Date().getFullYear()} Vision - Main, All rights reserved.
-            <a href="https://bitcode.pro/">
+            <a href="https://bitcode.pro/" target="_blank">
               <u>Powered By Bitcode</u>
             </a>
           </p>

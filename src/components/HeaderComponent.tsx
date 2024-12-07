@@ -69,9 +69,9 @@ const Header = ({ className }) => {
             ))}
           </div>
           <div className="inline-flex gap-10 pl-10">
-            {secondLinks.map((data, index) => (
+            {secondLinks.map((data) => (
               <p
-                key={index}
+                key={data.id}
                 className="text-[#9b9fa0] hover:text-slate-700 font-bold cursor-pointer">
                 {data}
               </p>
