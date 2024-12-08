@@ -5,12 +5,12 @@ import CreditCard from "@/components/CreditCard";
 
 const Footer = () => {
   return (
-    <div className="bg-[#2f3c44] h-[574.4px]  py-[65px]">
+    <footer className="bg-[#2f3c44] h-[574.4px]  py-[65px]">
       <div className="px-[50px] mx-[70px] flex">
         <div className="h-[275.4px] w-[436.6px]">
           <img
             src={FooterLogo}
-            alt="Footer logo"
+            alt="vision logo"
             className="h-[28.4px] w-[136px] mb-[20px]"/>
           <strong className="text-[20px] text-[#DADCE0]">
             Elevate your home <br /> with smart technology.
@@ -79,7 +79,7 @@ const Footer = () => {
           <CreditCard />
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

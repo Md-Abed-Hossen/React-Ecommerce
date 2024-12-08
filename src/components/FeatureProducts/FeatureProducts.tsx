@@ -1,29 +1,10 @@
-import Promotion1 from "@/assets/promotion-1.png";
-import Promotion2 from "@/assets/promotion-2.png";
-import Promotion3 from "@/assets/promotion-3.png";
-
+import { features } from '.@/components/static/ComapnyInfo'
+ 
 import FeatureProductsCard from "@/components/FeatureProducts/FeatureProductsCard";
 
-export const features = [
-  {
-    id: 1,
-    title: "Up to 50% off on accessories",
-    img: Promotion1,
-  },
-  {
-    id: 2,
-    title: "Use automation to save energy",
-    img: Promotion2,
-  },
-  {
-    id: 3,
-    title: "Enjoy a greater level of home security",
-    img: Promotion3,
-  },
-];
 const FeatureProducts = () => {
   return (
-    <div className="w-full mx-auto pt-[30px] pb-[60px]">
+    <section className="w-full mx-auto pt-[30px] pb-[60px]">
       <div className="flex flex-row gap-5 justify-between">
         {features.map((data) => (
           <p key={data.id}>
@@ -31,7 +12,7 @@ const FeatureProducts = () => {
           </p>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

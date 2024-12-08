@@ -23,10 +23,10 @@ const Header = ({ className }) => {
     setSearchValue(e.target.value);
   };
   return (
-    <div className={`w-full bg-[#f5f5f5] sticky top-0 z-10 ${className}`}>
+    <header className={`w-full bg-[#f5f5f5] sticky top-0 z-10 ${className}`}>
       <div className="flex flex-col gap-3 w-[1280px] mx-auto pt-[10px] ">
         <div className=" flex justify-between items-center ">
-          <img src={logo} alt="" className="h-6" />
+          <img src={logo} alt="vision logo" className="h-6" />
           <div className="flex items-center gap-3">
             <div className="relative">
               <input
@@ -62,8 +62,7 @@ const Header = ({ className }) => {
                 key={data.id}
                 className="
         font-bold text-sm no-underline text-[#535b62] relative hover:opacity-100 
-        before:transition-all before:duration-300 before:content-[''] before:h-[1px] before:bg-[#1c6de7e0] before:absolute before:bottom-[0px] before:w-0 hover:before:w-full cursor-pointer hover:text-[#1c6de7e0]
-      ">
+        before:transition-all before:duration-300 before:content-[''] before:h-[1px] before:bg-[#1c6de7e0] before:absolute before:bottom-[0px] before:w-0 hover:before:w-full cursor-pointer hover:text-[#1c6de7e0]">
                 {data}
               </p>
             ))}
@@ -79,7 +78,7 @@ const Header = ({ className }) => {
           </div>
         </nav>
       </div>
-    </div>
+    </header>
   );
 };
 

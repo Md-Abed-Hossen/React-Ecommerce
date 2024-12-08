@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef} from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import slideImg1 from "@/assets/slide_01-_1.png";
@@ -39,7 +39,6 @@ export default function App() {
         <SwiperSlide>
           <CarouselCard imageprop={slideImg1} />
         </SwiperSlide>
-
         <SwiperSlide>
           <CarouselCard imageprop={slideImg2} />
         </SwiperSlide>

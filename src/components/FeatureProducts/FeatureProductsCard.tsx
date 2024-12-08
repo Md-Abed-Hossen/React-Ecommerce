@@ -16,7 +16,7 @@ const FeatureProductsCard: React.FC<FeatureCardProps> = ({ title, img }) => {
         </div>
       </div>
       <div>
-        <img src={img} alt="" className="rounded-md h-[116px] w-[170px]" />
+        <img src={img} alt="Feature products" className="rounded-md h-[116px] w-[170px]" />
       </div>
     </div>
   );
