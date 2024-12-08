@@ -5,19 +5,22 @@ import { IoCartOutline } from "react-icons/io5";
 import { atom, useAtom } from "jotai";
 import SearchResult from "@/components/SearchResult";
 import { showHide } from "@/components/AtomsConfig";
-import { value } from '../components/AtomsConfig'
-
-export const searchValue = atom("");
+import { value } from "../components/AtomsConfig";
+import { filterText } from "../components/AtomsConfig";
+import { searchValue } from "../components/AtomsConfig";
 
 const Header = ({ className }) => {
   const [search, setSearch] = useAtom(searchValue);
   const [show, setShow] = useAtom(showHide);
+  const [category, setCategory] = useAtom(filterText);
   const [count] = useAtom(value);
+
+  console.log("serachngin", search);
 
   const headerArr = [
     "Features",
     "Shop",
-    "Doorbells",
+    "Doorbell",
     "Security",
     "Accessories",
     "Journal",
@@ -69,15 +72,17 @@ const Header = ({ className }) => {
         <nav className="pb-5 flex justify-between">
           <div className="inline-flex gap-10">
             {FirstLinks.map((data, index) => (
-              <p
+              <button
+                onClick={() => setCategory(data.toLocaleLowerCase())}
                 key={index}
-                className="
-        font-bold text-sm no-underline text-[#535b62] relative hover:opacity-100 
-        before:transition-all before:duration-300 before:content-[''] before:h-[1px] before:bg-[#1c6de7e0] before:absolute before:bottom-[0px] before:w-0 hover:before:w-full cursor-pointer hover:text-[#1c6de7e0]
-      "
+                className={`
+        // font-bold text-sm no-underline text-[#535b62] relative hover:opacity-100 
+        // before:transition-all before:duration-300 before:content-[''] before:h-[1px] before:bg-[#1c6de7e0] before:absolute before:bottom-[0px] before:w-0 hover:before:w-full cursor-pointer hover:text-[#1c6de7e0]
+        ${category == data.toLocaleLowerCase() && "text-[#1c6de7e0]"}
+      `}
               >
                 {data}
-              </p>
+              </button>
             ))}
           </div>
           <div className="inline-flex gap-10 pl-10">

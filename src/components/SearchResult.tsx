@@ -1,8 +1,12 @@
 import { productsArray } from "@/components/ProductSlider";
 
+
+
 const SearchResult = ({ search }: { search: string }) => {
-  const filterSearch = productsArray.filter((data) =>
-    data.title.toLowerCase().includes(search.toLowerCase())
+
+  const filterSearch = productsArray.filter((data) =>{
+    console.log("tesing", search)
+   return data.title.toLowerCase().includes(search.toLowerCase())}
   );
 
   return (
