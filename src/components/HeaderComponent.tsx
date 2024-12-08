@@ -5,12 +5,14 @@ import { IoCartOutline } from "react-icons/io5";
 import { atom, useAtom } from "jotai";
 import SearchResult from "@/components/SearchResult";
 import { showHide } from "@/components/AtomsConfig";
+import { value } from '../components/AtomsConfig'
 
 export const searchValue = atom("");
 
 const Header = ({ className }) => {
   const [search, setSearch] = useAtom(searchValue);
   const [show, setShow] = useAtom(showHide);
+  const [count] = useAtom(value);
 
   const headerArr = [
     "Features",
@@ -58,6 +60,9 @@ const Header = ({ className }) => {
               className="text-2xl cursor-pointer"
               onClick={() => viewCard()}
             />
+            <span className="absolute px-2 py-1 text-xs rounded-full top-2 right-[6.3rem] font-semibold bg-black text-white">
+              {count}
+            </span>
           </div>
         </div>
 

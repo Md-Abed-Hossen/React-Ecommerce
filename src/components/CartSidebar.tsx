@@ -3,10 +3,15 @@ import { BsCartX } from "react-icons/bs";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { showHide, value } from "@/components/AtomsConfig";
 import { useAtom } from "jotai";
+import { cart } from "../components/ProductDialogBox";
 
 const CartSidebar = () => {
   let [count, setCount] = useAtom(value);
   const [show, setShow] = useAtom(showHide);
+  const [data, setData] = useAtom(cart);
+
+  const price = Math.round(data.price * count);
+
   return (
     <div className="h-full rounded-2xl bg-white flex flex-col absolute w-full">
       <div className="flex justify-between items-center py-[23px] px-[30px] bg">
@@ -37,10 +42,14 @@ const CartSidebar = () => {
       ) : (
         <div className="flex flex-col top-2 h-full justify-between">
           <div className="px-[30px] flex justify-between pt-2">
-            <div className="h-[120px] w-[96px] bg-black"> hi </div>
+            <img
+              src={data.img}
+              alt="product image"
+              className="h-[120px] w-[96px] bg-black"
+            />
             <div className="w-[275px] h-[91px] text-[#303C43] flex flex-col justify-between">
-              <div className="text-[15px]">name</div>
-              <div className="text-[12px]">types</div>
+              <div className="text-[15px]">{data.name}</div>
+              <div className="text-[12px]">{data.title}</div>
               <div className="flex space-x-5 items-center">
                 <div className="w-[80px] h-[36px] px-1 items-center border border-1 rounded-md flex justify-between text-[15px] text-[#303C43]">
                   <button onClick={() => setCount(count - 1)}>-</button>
@@ -53,7 +62,7 @@ const CartSidebar = () => {
                 />
               </div>
             </div>
-            <div className="text-[#303C43] text-[15px]">${88 * count}</div>
+            <div className="text-[#303C43] text-[15px]">${price}</div>
           </div>
 
           <div className="p-[30px] h-[228px] flex flex-col gap-2">
@@ -65,7 +74,7 @@ const CartSidebar = () => {
                   Tax included. Shipping calculated at checkout.
                 </p>
               </div>
-              <p className="text-[20px]">${88*count}</p>
+              <p className="text-[20px]">${price}</p>
             </div>
             <div className="flex gap-2">
               <input type="checkbox" />

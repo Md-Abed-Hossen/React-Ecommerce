@@ -1,10 +1,32 @@
 import demoImg from "../assets/p12.png";
 import { RxCross2 } from "react-icons/rx";
-import { productDialog } from "./AtomsConfig";
-import { useAtom } from "jotai";
+import { productDialog, value } from "./AtomsConfig";
+import { atom, useAtom } from "jotai";
+import { cardData } from "../components/AtomsConfig";
 
-const Modal = () => {
+export const cart = atom([]);
+
+const ProductDialogBox = () => {
   const [dialog, setDialog] = useAtom(productDialog);
+  const [data, setData] = useAtom(cardData);
+  const [cartdata, setCartdata] = useAtom(cart);
+
+  let [count, setCount] = useAtom(value);
+
+  // const handleCart = () => {
+  //   setDialog(false);
+  //   //  setCartdata(prevConf => {
+  //   //    prevConf.push(data)
+  //   //    return prevConf
+  //   //   })
+  // };
+
+  const handleCartButton = () => {
+    setCartdata(data);
+    setCount(count + 1);
+    setDialog(false);
+  };
+
   return (
     <div className="relative z-10">
       <div
@@ -16,17 +38,23 @@ const Modal = () => {
         <div className="relative transform overflow-hidden rounded-lg bg-white text-center shadow-xl transition-all w-[1160px] h-[666px] flex justify-between p-20">
           <div>
             <img
-              src={demoImg}
+              src={data.img}
               alt="Product Image"
               className="h-[520px] w-[416px] rounded-2xl"
             />
           </div>
           <div className="flex flex-col h-[520px] w-[480px] justify-between">
             <div className="flex flex-col items-start space-y-4">
-              <p className="text-[11px] text-[303C43] font-medium">title</p>
+              <p className="text-[11px] text-[303C43] font-medium">
+                {data.title}
+              </p>
 
-              <p className="text-[34px] text-[303C43] font-medium">Name</p>
-              <p className="text-[20px] text-[303C43] font-medium">$20</p>
+              <p className="text-[34px] text-[303C43] font-medium text-start">
+                {data.name}
+              </p>
+              <p className="text-[20px] text-[303C43] font-medium">
+                ${data.price}
+              </p>
               <p className="text-[12px] text-[303C43] font-medium">
                 Tax included. Shipping calculated at checkout
               </p>
@@ -38,16 +66,15 @@ const Modal = () => {
                 or Siri) that can answer questions, provide updates, play music,
                 set reminders, and more—all through simple voice commands. Many
                 smart home speakers also function as a central hub for other
-                smart devices, allowing users to control lights, thermostats,
-                security cameras, and even door locks from a single voice
-                interface. Often stylish and compact, these speakers fit
-                seamlessly into any room, combining convenience, home
-                automation, and sound quality into one integrated device.
+                smart devices.
               </p>
             </div>
 
             <div className="flex gap-3 text-white font-medium bottom-0">
-              <button className="h-[50px] w-[233px] bg-[#3F72E5] rounded-3xl">
+              <button
+                className="h-[50px] w-[233px] bg-[#3F72E5] rounded-3xl"
+                onClick={() => handleCartButton()}
+              >
                 Add to cart
               </button>
               <button className="h-[50px] w-[233px] bg-[#303C43] rounded-3xl">
@@ -65,4 +92,4 @@ const Modal = () => {
   );
 };
 
-export default Modal;
+export default ProductDialogBox;

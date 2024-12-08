@@ -1,10 +1,19 @@
 import { showHide } from "@/components/AtomsConfig";
-import { useAtom } from "jotai";
-import { productDialog } from "./AtomsConfig";
+import { atom, useAtom } from "jotai";
+import { productDialog, cardData } from "./AtomsConfig";
 
 const ProductSliderCard = ({ title, name, price, img }) => {
   const [show, setShow] = useAtom(showHide);
+
   const [dialog, setDialog] = useAtom(productDialog);
+
+  const [data, setData] = useAtom(cardData);
+
+  const modelShow = () => {
+    setDialog(true);
+    setData({ title, name, price, img });
+  };
+
   return (
     <div className="w-[240px] h-[50px] flex flex-col justify-between group relative pb-[20px]">
       <div className="h-[300px] w-[240px]">
@@ -12,7 +21,7 @@ const ProductSliderCard = ({ title, name, price, img }) => {
 
         <p
           className="absolute top-60 left-5 w-[210px] h-[40px] bg-white text-gray-600 text-sm py-2 rounded-lg drop-shadow-lg transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 cursor-pointer"
-          onClick={() => setDialog(true)}
+          onClick={() => modelShow()}
         >
           Quick View
         </p>
